@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var string_one = "This is String One";
+        console.log(string_one);
+        console.log(typeof(string_one)); // variable data type
+        console.log(string_one.length);
+        var string_one = "This is \'String\' One";
+        console.log(string_one);
+
+        var string_two = "Apple , Orange , Banana";
+        console.log(string_two);
+        console.log(string_two.slice(8,14)); 
+        // slice 2 , start index , end index
+        console.log(string_two.slice(17,23));
+        console.log(string_two.slice(-23,-18));
+
+        console.log(string_two.substring(8,14));
+
+        console.log(string_two.substr(8,6)); // end is length
+        // substr 2 , start index , end length < option > 
+        console.log(string_two.substr(8));
+        console.log(string_two.substr(-6));
+
+        var string_three = "I am software enginner";
+        console.log(string_three);
+        console.log(string_three.replace("enginner","developer")); // old string , new string
+        console.log(string_three.replace(/Enginner/i,"Developer")); // i incase sensitive
+        
+        var string_four = "I am software enginner , we are software enginner";
+        console.log(string_four);
+        console.log(string_four.replace("enginner","developer"));
+        console.log(string_four.replace(/enginner/g,"developer")); // g global
+
+        var string_five = "I AM PROGAMMER";
+        console.log(string_five);
+        console.log(string_five.toLowerCase());
+
+        var string_six = "i am programmer";
+        console.log(string_six);
+        console.log(string_six.toUpperCase());
+
+        var string_nine = "Hello I am ";
+        var string_ten = " programmer";
+        console.log(string_nine.concat(string_ten));
+
+
+        var string_eleven = "     He     llo     1          ";
+        console.log(string_eleven);
+        console.log(string_eleven.trim());
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1 id="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="one"></h1>
+    <h1 class="two"></h1>
+    <h1 class="two"></h1>
+    <h1 class="two"></h1>
+    <script>
+        /*
+            element  select id , class tagname 
+        */
+       var heading_id_one = document.getElementById("one");
+       heading_id_one.innerHTML = "Just Do It";
+
+       var heading_class_one = document.getElementsByClassName("one");
+       heading_class_one[0].innerHTML = "Hello";
+       heading_class_one[1].innerHTML = "World";
+       heading_class_one[2].innerHTML = "Programmer";
+
+       var two = document.querySelector(".two");
+
+       var two = document.getElementsByClassName("two");
+        two[0].innerHTML= 1;
+
+        var headingOne = document.getElementsByTagName("h1");
+        headingOne[11].innerHTML = "one";
+    </script>
+</body>
+</html>

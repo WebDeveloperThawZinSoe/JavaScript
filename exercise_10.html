@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #display{
+            width: 60%;
+            margin-left: 20%;
+            height: 80px;
+            background-color: rgb(119, 116, 116);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #text{
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            padding-top: 15px;
+        }
+
+        .btn{
+            display: inline-block;
+            width: 20%;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+
+        #start{
+            margin-left: 20%;
+        }
+        .btn-text{
+            margin-left: 40%;
+        }
+
+        .btn:hover{
+            background-color: rgb(82, 78, 82);
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <p id="text"> <span id="MinDisplay">00</span> : <span id="SecondDisplay">00</span></p>
+    </div>
+    
+    <div class="btn" id="start" onclick="starter()"> <p class="btn-text">Start</p> </div>
+    <div class="btn" id="stop" onclick="stoper()"><p class="btn-text">Stop</p></div>
+    <div class="btn" id="restart " onclick="restarter()"><p class="btn-text">Restart</p></div>
+    <script>
+      var text =   document.getElementById("text");
+      var start =   document.getElementById("start");
+      var stop =   document.getElementById("stop");
+      var restart =   document.getElementById("restart");
+      var min =   document.getElementById("MinDisplay");
+      var second =   document.getElementById("SecondDisplay");
+
+      var start_digit = 0;
+      var min_digit = 0;
+      var stetInter ;
+
+      function starter(){
+         setInter = setInterval(function(){
+            start_digit += 1;
+           
+            if(start_digit > 60){
+               start_digit = start_digit - 60;
+               min_digit += 1;
+            }
+
+            if(min_digit >= 60){
+                start_digit = 0;
+                stoper();
+                alert("1Hour Done")
+            }
+            second.innerText = start_digit;
+            min.innerHTML = min_digit;
+         },1);
+         //function , time
+      }
+
+      function stoper(){
+        clearInterval(setInter);
+      }
+
+      function restarter(){
+        start_digit = 0;
+        min_digit = 0;
+        second.innerText = start_digit;
+        min.innerHTML = min_digit;
+        clearInterval(setInter);
+      }
+    </script>
+</body>
+</html>

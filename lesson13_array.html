@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myArrayOne = ["Apple","Banana","Cat","DOg","Egg"];
+        console.log(myArrayOne);
+        console.log(myArrayOne.pop()); // display 
+        console.log(myArrayOne);
+
+        console.log(myArrayOne.push("Five")); //
+        console.log(myArrayOne);
+
+        console.log(myArrayOne.shift());
+        console.log(myArrayOne);
+
+        console.log(myArrayOne.unshift("Zero"));
+        console.log(myArrayOne);
+
+        delete myArrayOne[0];
+        console.log(myArrayOne);
+
+        console.log(myArrayOne[0]);
+        console.log(myArrayOne[1]);
+
+        var myArrayTwo = ["apple","banaa","oragne","watermallon","corn","bean"];
+        console.log(myArrayTwo);
+        console.log(myArrayTwo.splice(1,1)); //banana
+        console.log(myArrayTwo);
+        //["apple","oragne","watermallon","corn","bean"]
+        console.log(myArrayTwo.splice(2,1)); //index , length
+        console.log(myArrayTwo);
+        ////["apple","oragne","corn","bean"]
+        console.log(myArrayTwo.splice(0,0,"New Data 1" , "New Data 2"));
+        console.log(myArrayTwo);
+
+        var MyArrayThree = [1,2,3];
+        var MyArrayFour = [4,5,6];
+        console.log(MyArrayThree.concat(MyArrayFour));
+
+        var MyArrayFive = [1,2,3,4,5,6];
+        console.log(MyArrayFive);
+        console.log(MyArrayFive.slice(3)); //length
+        console.log(MyArrayFive); //no 
+        
+        const MyConstVar = "This is Const";
+        console.log(MyConstVar);
+
+        // const MyConstVar = "This is Reassign";
+        // const.log(MyConstVar);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paper rock scissors Game</title>
+    <style>
+        #showResult{
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 3%;
+            margin-bottom:3% ;
+            background-color: grey;
+            color: white;
+            height: 80px;
+        }
+        #showResultText{
+            text-align: center;
+            font-size: 30px;
+            padding-top: 15px;
+        }
+        #paper , #rock , #scissors{
+            width: 20%;
+            height: 50px;
+            background-color: grey;
+            display: inline-block;
+        }
+        #paper > p , #rock > p , #scissors > p{
+            text-align: center;
+            color: white;
+        }
+        #paper:hover , #rock:hover , #scissors:hover{
+           background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="showResult">
+        <p id="showResultText"> Play Game </p>
+    </div>
+    <div id="paper" style="margin-left: 20%;"><p>Paper</p></div>
+    <div id="rock"> <p>Rock</p> </div>
+    <div id="scissors"> <p>scissors</p> </div>
+    <p style="margin-left: 20%;"> Computer Choice : <span id="cd"></span> </p>
+    <script>
+        var showResultText = document.getElementById("showResultText");
+        var paper = document.getElementById("paper");
+        var rock = document.getElementById("rock");
+        var scissors = document.getElementById("scissors");
+        var cd = document.getElementById("cd");
+
+        //paper rock scissors
+        var choice = ["p","r","s"];
+        var userInput;
+        var data , UI , CI , result ;
+
+        function userChoice(userInput){
+            // console.log(userInput);
+            computerChoice();
+        }
+
+        function computerChoice(){
+          var digit = Math.floor( Math.random() * 3 );
+           data = choice[digit];
+        //   console.log("Computer Choice = " +  data);
+        }
+
+        function cal(UI,CI){
+            var comp = UI + CI;
+            /* pp ps pr / rr rp rs / ss sp sr */
+            /* pr rs sp / rp sr ps / rr pp ss */
+            switch(comp){
+                case "pr" : 
+                case "rs" : 
+                case "sp" :
+                    showResultText.innerHTML = "User Win";
+                   break;
+                case "rp" : 
+                case "sr" : 
+                case "ps" : 
+                    showResultText.innerHTML = "User Lose";
+                    
+                    break;
+                case "rr": 
+                case "pp": 
+                case "ss" :
+                    showResultText.innerHTML = "No Body Win";  
+            }
+            
+            switch(CI){
+                case "r":
+                    cd.innerHTML = "Rock";
+                    break;
+                case "s": 
+                    cd.innerHTML = "Sissors";
+                    break;
+                case "p":
+                    cd.innerHTML = "Paper"; 
+                    break;
+            }
+        }
+
+        paper.addEventListener("click",function(){
+            userChoice("paper");
+            cal("p",data);
+        });
+
+        rock.addEventListener("click",function(){
+            userChoice("rock");
+            cal("r",data);
+        });
+
+        scissors.addEventListener("click",function(){
+            userChoice("scissors");
+            cal("s",data);
+        });
+
+    </script>
+</body>
+</html>

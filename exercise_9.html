@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        #display{
+            width: 60%;
+            margin-top: 4%;
+            height: 100px;
+           
+            margin-left: 15%;
+        }
+        h3{
+            display: inline-block;
+            font-size: 24px;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <h3 id="year"></h3> /
+        <h3 id="month"></h3> /
+        <h3 id="date"></h3> /
+        (<h3 id="day"></h3>)
+        <h3 id="hour"></h3> :
+        <h3 id="min"></h3> :
+        <h3 id="second"></h3>
+        [ <h3 id="amOrpm"></h3> ]
+    </div>
+    <script>
+        var year  = document.getElementById("year");
+        var month  = document.getElementById("month");
+        var day  = document.getElementById("day");
+        var date_display  = document.getElementById("date");
+        var  hour = document.getElementById("hour");
+        var min = document.getElementById("min");
+        var second  = document.getElementById("second");
+        var am_or_pm = document.getElementById("amOrpm");
+
+        var mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var dL = ["Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"];
+
+       
+
+        setInterval(function(){
+            var date = new Date();
+
+            var hour_data = date.getHours();
+            if(hour_data > 12){
+                hour_data = hour_data - 12;
+                am_or_pm_data = "PM";
+            }else{
+                am_or_pm_data = "AM";
+            }
+
+            year.innerText = date.getFullYear();
+            month.innerText = mL[date.getMonth()];
+            day.innerText = dL[date.getDay()];
+            date_display.innerText = date.getDate();
+            hour.innerText = hour_data;
+            min.innerText = date.getMinutes();
+            second.innerText = date.getSeconds();
+            am_or_pm.innerText = am_or_pm_data;
+        },1000);
+       
+    </script>
+</body>
+</html>

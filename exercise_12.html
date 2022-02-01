@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #EAEBEC;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+}
+
+.calc-body {
+  width: 275px;
+  margin: auto;
+  min-height: 400px;
+  border: solid 1px #3A4655;
+  box-shadow: 0 8px 50px -7px black;
+}
+
+.calc-screen {
+  background: #3A4655;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+}
+
+.calc-operation {
+  text-align: right;
+  color: #727B86;
+  font-size: 21px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px;
+}
+
+.calc-typed {
+  margin-top: 20px;
+  font-size: 45px;
+  text-align: right;
+  color: #fff;
+}
+
+.calc-button-row {
+  width: 100%;
+  background: #3C4857;
+}
+
+.button {
+  width: 25%;
+  background: #425062;
+  color: #fff;
+  padding: 20px;
+  display: inline-block;
+  font-size: 25px;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: -4px;
+  border-right: solid 2px #3C4857;
+  border-bottom: solid 2px #3C4857;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.l {
+  color: #AEB3BA;
+  background: #404D5E;
+}
+
+.button.c {
+  color: #D95D4E;
+  background: #404D5E;
+}
+
+.button:hover {
+  background: #E0B612;
+  transform: rotate(5deg);
+}
+
+.button.c:hover,
+.button.l:hover {
+  background: #E0B612;
+  color: #fff;
+}
+
+.blink-me {
+  color: #E0B612;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calc-body">
+          <div class="calc-screen">
+            <div class="calc-operation" id="display"> </div>
+            <div class="calc-typed" id="result"></div>
+          </div>
+          <div class="calc-button-row">
+            <div class="button c" onclick="allClear()">C</div>
+            <div class="button l" onclick="del_btn()">Del</div>
+            <div class="button l" onclick="num('%')">%</div>
+            <div class="button l" onclick="num('/')">/</div>
+          </div>
+          <div class="calc-button-row">
+            <div class="button" onclick="num('7')">7</div>
+            <div class="button" onclick="num('8')">8</div>
+            <div class="button" onclick="num(9)">9</div>
+            <div class="button l" onclick="num('*')">x</div>
+          </div>
+          <div class="calc-button-row">
+            <div class="button" onclick="num(4)">4</div>
+            <div class="button" onclick="num(5)">5</div>
+            <div class="button" onclick="num(6)">6</div>
+            <div class="button l" onclick="num('-')">−</div>
+          </div>
+          <div class="calc-button-row">
+            <div class="button" onclick="num(1)">1</div>
+            <div class="button" onclick="num(2)">2</div>
+            <div class="button" onclick="num(3)">3</div>
+            <div class="button l" onclick="num('+')">+</div>
+          </div>
+          <div class="calc-button-row">
+            <div class="button" onclick="num('.')">.</div>
+            <div class="button" onclick="num(0)">0</div>
+            <div class="button">
+              </div>
+                <div class="button l" onclick="cal()">=</div>
+            </div>
+          </div>
+        </div>
+<script>
+    var data , all_data , cal_data , level;
+    var display = document.getElementById("display");
+    var result = document.getElementById("result");
+
+    function num(data){
+    //    display.innerHTML =  data;
+         display.innerHTML = display.innerHTML  + data;
+    }
+
+    function cal(){
+       cal_data = eval(display.innerHTML);
+       result.innerHTML = cal_data;
+    }
+
+    function allClear(){
+        display.innerHTML = "";
+        result.innerHTML = "";
+    }
+
+    function del_btn(){
+        console.log(result.innerHTML);
+        console.log(typeof(result.innerHTML));
+        level = result.innerHTML;
+        level = level.split(''); 
+        level.pop();
+        level = level.toString();
+        console.log(level);
+        level = level.replace(/,/g,"");
+        result.innerHTML = level;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tester{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>One</h1> -->
+    <button id="btn" onclick="change()">Create and Change Color</button>
+    <script>
+        function change(){
+
+        //    var h1 = document.getElementsByTagName("h1");
+           var btn = document.getElementById("btn");
+           var create_element  = document.createElement("h1"); // element create
+           var h1_data = document.createTextNode("Hello World"); // create data
+           create_element.appendChild(h1_data); // add data to elment
+           document.body.insertBefore(create_element,btn)
+            
+
+
+           var create_class = document.createAttribute("class"); //create attribute
+           create_class.value = "tester"; // create attribute's value
+           create_element.setAttributeNode(create_class); // setattribute to new element
+        }
+    </script>
+</body>
+</html>

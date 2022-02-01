@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="maker()">Click</button>
+    <div id="one">Old text</div>
+    <script>
+        function maker(){
+            var one = document.getElementById("one");
+            var h1_creator = document.createElement("h1"); // create element 
+            var h1_data = document.createTextNode("Hello World"); // create content
+            h1_creator.appendChild(h1_data); // join contenet with element
+            document.body.insertBefore(h1_creator,one);
+            //new element , old element
+        }
+      
+    </script>
+</body>
+</html>
